@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:online_store/Constants/global_variables.dart';
-import 'Features/Screens/Auth Screen/Sign In/sign_in.dart';
+import 'package:online_store/routes.dart';
+import 'Features/Screens/Auth Screen/Sign Up/sign_up.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
           primary: GlobalVariables.secondaryColor
         )
       ),
-      home: const SignInScreen(),
+      onGenerateRoute: (settings) => generateRoute(settings),
+      home: const SignUpScreen(),
     );
   }
 }

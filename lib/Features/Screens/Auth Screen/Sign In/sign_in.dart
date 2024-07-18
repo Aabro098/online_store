@@ -4,7 +4,10 @@ import 'package:online_store/Features/Utils/elevated_button.dart';
 import 'package:online_store/Features/Widgets/form.dart';
 import 'package:online_store/Style/text_style.dart';
 
+import '../Sign Up/sign_up.dart';
+
 class SignInScreen extends StatefulWidget {
+  static const String routeName = '/signin-screen';
   const SignInScreen({super.key});
 
   @override
@@ -24,6 +27,8 @@ class _SignInScreenState extends State<SignInScreen> {
           padding: const EdgeInsets.all(8.0),
           child: SingleChildScrollView(
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Flexible(
                   flex: 2,
@@ -32,6 +37,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       padding: const EdgeInsets.fromLTRB(100, 0.0, 0.0, 0.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text("Amazon" ,
                             style: AppTextStyle.appTitle,
@@ -50,12 +56,12 @@ class _SignInScreenState extends State<SignInScreen> {
                 const Spacer(),
                 Center(
                   child: Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 0, 200, 100),
+                    padding: const EdgeInsets.fromLTRB(0, 50, 200, 100),
                     child: Column(
                       children: [
                         SizedBox(
                           width: 450,
-                          height: 600,
+                          height: 500,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -130,7 +136,9 @@ class _SignInScreenState extends State<SignInScreen> {
                                     const SizedBox(height: 10.0),
                                     AppElevatedButton(
                                       text: 'Create New Account',
-                                      onTap: () {},
+                                      onTap: () {
+                                        Navigator.pushReplacementNamed(context, SignUpScreen.routeName);
+                                      },
                                       color : Colors.green.shade600
                                     ),
                                   ],
@@ -138,12 +146,6 @@ class _SignInScreenState extends State<SignInScreen> {
                               ),
                             ],
                           ),
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        Text("Connect with us to find everything !" ,
-                          style: AppTextStyle.mainTitle,
                         ),
                       ],
                     ),
